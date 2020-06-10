@@ -1,0 +1,227 @@
+<html>
+    <head>
+        <title>Curso de Javascript</title>
+    </head>
+    <body>
+        <!--
+        <script>
+            function retornaSexo(sexo){
+                if(sexo == 'M'){
+                    return console.log("Sexo masculino");
+                }
+                else if(sexo == 'F'){
+                    return console.log("Sexo feminino");
+                }
+                else{
+                    return console.log("Opção inválida");
+                }                
+            }
+            var resultado = retornaSexo('M');
+        </script>
+
+        <script>    
+            function retornaSexo2(sexo){
+               
+                switch(sexo){
+                    case 'M':
+                        return "Sexo masculino";
+                    case 'F':
+                        return "Sexo feminino";
+                    default:
+                        return "Opção inválida";
+                }
+            }
+            var resultado2 = retornaSexo2('F');
+        </script>
+        
+        <script>
+            /*A condição ternária é usada quando só temos duas opções em uma condição.
+              Temos o primeiro exemplo, no qual usamos um if e um else. No segundo caso,
+              substituimos essa verificação pela condição ternária, de um jeito mais reduzido.
+
+            */
+            var sexo = 'M'
+            if(sexo === 'M'){
+                console.log("O sexo é Masculino");
+            }
+            else{
+                console.log("O sexo é feminino");
+            }
+
+            /*
+             Colocamos nossa condição entre os parênteses e, após a interrogação (?), colocamos o valor
+             que nossa variável irá receber, caso esse condição se prove verdadeira. Após o sinal de
+             dois pontos (:), colocamos o valor que nossa variável vai receber, caso a verificação resulte
+             em falso.    
+            */
+
+            var sexo = 'F';
+            var retorno = (sexo === 'M') ? 'Masculino' : 'Feminino'
+            console.log("O sexo é", retorno);
+        </script>
+    
+    
+        INTERVALOS E TIMEOUTS
+        Um intervalo, no Javascript, é uma função que executa diversas vezes, dentro de um intervalo.
+        O intervalo é definido em milisegundos. Assim, quando definimos o tempo em 1000, estamos dizendo
+        que a execução vai ser feita a cada 1 segundo, de acordo com a sintaxe
+        Já o setTimeout vai executar a função uma única vez, porém, vai ser após o tempo declarado no delay. 
+        <script>
+
+            function exibeMensagem(){                
+                console.log("Trabalho duro");
+            }
+            setInterval(exibeMensagem, 1000);
+
+            function exibeMensagem2(){                
+                console.log("É com Vitor sujo");
+            }
+            setTimeout(exibeMensagem2, 2000);
+
+        </script>
+    
+
+        <script>
+
+            /*Crie uma função que dado o objeto a seguir, retorne o seguinte conteúdo: 
+            O usuário mora em São Paulo / SP, no bairro Centro, na rua "Rua dos Pinheiros" com
+            nº 1293.*/
+
+
+            var endereco = {
+            rua: "Rua dos pinheiros",
+            numero: 1293,
+            bairro: "Centro",
+            cidade: "São Paulo",
+            uf: "SP"
+            };
+
+            function dadosDoUsuario(endereco){
+               return console.log('O usuário mora em', endereco.cidade,'/', endereco.uf,', no bairro', endereco.bairro,', na rua', endereco.rua, 'com nº', endereco.numero,'.');
+            }
+
+            dadosDoUsuario(endereco);
+        </script>
+        
+
+        <script>
+            /*Crie uma função que dado um intervalo (entre x e y) exiba todos número pares:*/
+
+            function pares(x, y) {
+                
+                for(i=x; i<y; i++){
+                    
+                    /*var par = (i%2 === 0) ? i : null;
+                    console.log(par);*/
+                    if(i%2 === 0){
+                        console.log(i);                        
+                    }
+                    else{
+
+                    }
+                }           
+            }
+            pares(32, 321);
+        </script>
+        
+
+        <script>
+            /*Escreva uma função que verifique se o vetor de habilidades passado possui a habilidade "Javascript"
+            e retorna um booleano true/false caso exista ou não.*/
+
+            function temHabilidade(skills) {
+
+                var resultado = (skills.indexOf("ReactJS") === -1) ? false : true;
+
+                console.log(resultado);           
+            }
+            var skills = [, "ReactJS", "React Native"];
+            temHabilidade(skills); // true ou false
+
+        </script>
+        
+
+        <script>
+            /*Escreva uma função que dado um total de anos de estudo retorna o quão experiente o usuário é:*/
+
+            function experiencia(anos) {
+
+                if(anos >= 0 && anos <= 1){
+                    return console.log("Nível de experiência: Iniciante!");
+                }
+                
+                else if(anos >= 1 && anos <= 3){
+                    return console.log("Nível de experiência: Intermediário!");
+                }
+                
+                else if(anos >= 3 && anos <= 6){
+                    return console.log("Nível de experiência: Avançado!");
+                }
+
+                else if(anos >= 7){
+                    return console.log("Nível de experiência: Jedi Master!");
+                }
+
+                else{
+                    console.log("Opção inválida!");
+                }
+            }
+
+            var anosEstudo = 7;
+            experiencia(anosEstudo);
+            // De 0-1 ano: Iniciante
+            // De 1-3 anos: Intermediário
+            // De 3-6 anos: Avançado
+            // De 7 acima: Jedi Master
+        </script>
+    -->
+
+        <script>
+            /*Dado o seguinte vetor de objetos*/
+
+            var usuarios = [
+                {
+                nome: "Diego",
+                habilidades: ["Javascript", "ReactJS", "Redux"]
+                },
+                {
+                nome: "Gabriel",
+                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+                }
+            ];
+
+            function habilidadesDev(usuarios){                
+                    
+                    for(var dev of usuarios){
+                        console.log("O", dev.nome, "possui as habilidades:", dev.habilidades.join());
+                    }
+                    
+                    /*
+                    var devnome1 = usuarios[0].nome;
+                    var devhab1 = usuarios[0].habilidades.join();
+                    var devnome2 = usuarios[1].nome;
+                    var devhab2 = usuarios[1].habilidades.join();
+                    
+                        console.log(devnome1,"possui as habilidades:", devhab1);                    
+                        console.log(devnome2,"possui as habilidades:", devhab2);
+                    */               
+            }
+            habilidadesDev(usuarios);
+
+            /*Escreva uma função que produza o seguinte resultado:
+
+            O Diego possui as habilidades: Javascript, ReactJS, Redux
+            O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir
+            
+            Dica: Para percorrer um vetor você deve utilizar a sintaxe for...of e para unir valores de um array
+            com um separador utilize o join.
+            */
+
+        </script>
+        
+
+    
+
+
+    </body>
+</html>
